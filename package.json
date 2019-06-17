@@ -1,0 +1,20 @@
+{
+  "name": "proyecto_node",
+  "version": "1.0.2",
+  "description": "Segunda entrega",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander alexsg831@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "jade": "^1.11.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.5.7"
+  },
+  "devDependencies": {}
+}
