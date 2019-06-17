@@ -1,0 +1,44 @@
+extends ./layout.jade
+extends ./index.jade
+include ../app.js
+
+
+block table
+  br
+  each run in ins
+    if run.estado == "Disponible"
+      div(class="panel-group col-md-4" id="accordion" role="tablist")
+        div(class="panel panel-default")
+          div(class="panel-heading" role="tab" id="heading#{run.id}")
+            h4(class="panel-title")
+              a(href="#collapse#{run.id}" data-toggle="collapse" data-parent="#accordion") Nombre del curso: #{run.nombre}
+          
+          div(id="collapse#{run.id}" class="panel-collapse collapse")
+            div(class="panel-body") 
+              div(class="table-responsive")
+                table(class="table")
+                  tr
+                    th Documento
+                    th Nombre
+                    th Correo
+                    th Telefono
+                    th Eliminar
+                      each i in dark
+                        if i.curso == run.nombre
+                          tbody
+                            tr
+                              td
+                               p= i.documento
+                              td
+                               p= i.nombre
+                              td
+                               p= i.correo
+                              td
+                               p= i.telefono
+                              td
+                               a(href="/eliminarInscrito/#{i.documento}/#{i.curso}" class="btn btn-danger") Eliminar
+
+
+                   
+
+                    

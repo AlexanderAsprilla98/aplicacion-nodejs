@@ -1,0 +1,23 @@
+extends ./layout.jade
+block contenido
+ div(class="container")
+   h1 Bienvenido al proyecto de Nodejs
+
+block menu
+  div(class="container")
+   div.container-fluid
+      br
+      div.row
+         div.col-md-6
+            ul.nav.nav-tabs
+               li(role="presentation")
+                 a(href="/cursos") Inicio
+               li(role="presentation")
+                 a(href="/registro") Crear Curso
+               li(role="presentation")
+                 a(href="/cursos") Ver Curso
+               li(role="presentation")
+                 a(href="/inscribir") Inscribir
+               li(role="presentation")
+                 a(href="/inscritos") Ver Inscritos
+

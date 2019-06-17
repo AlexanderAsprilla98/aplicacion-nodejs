@@ -1,0 +1,87 @@
+extends ./layout.jade
+extends ./index.jade
+include ../app.js
+
+
+block ver
+ div(class="container")
+   h1 Ver cursos como administrador
+
+block table
+  div(class="container")
+    div(class="table-responsive")
+      table(class="table")
+        thead
+          th Id
+          th Nombre
+          th Modalidad
+          th Valor
+          th Descripcion
+          th Intensidad
+          th Estado
+          th Modificar
+            tbody 
+              each curso in dataCursos
+                tr
+                  td
+                    p= curso.id
+                  td
+                    p= curso.nombre
+                  td 
+                    p= curso.modalidad
+                  td
+                    p= curso.valor
+                  td
+                    p= curso.descripcion
+                  td
+                    p= curso.intensidad
+                  td
+                    p= curso.estado
+                  td
+                    a(type="submit" value="Crear" class="btn btn-primary" href="/upgrade/#{curso.id}") Actualizar
+
+block collapse
+ div(class="container")
+   h1 Ver cursos como interesado
+   each x in dataCursos
+      if x.estado == "Disponible"
+        div(class="panel-group col-md-4" id="accordion" role="tablist")
+          div(class="panel panel-default")
+            div(class="panel-heading" role="tab" id="heading#{x.id}")
+              h4(class="panel-title")
+                  a(href="#collapse#{x.id}" data-toggle="collapse" data-parent="#accordion") 
+                    p Nombre del curso: #{x.nombre}
+                    p Descripción: #{x.descripcion}  
+                    p Valor: #{x.valor}
+                    
+                    
+
+            div(id="collapse#{x.id}" class="panel-collapse collapse")
+              div(class="panel-body") 
+                p Nombre: #{x.nombre}
+                p Valor: #{x.valor}
+                p Descripcion: #{x.descripcion}
+                p Intensidad: #{x.intensidad}
+                if x.modalidad == "Seleccione una opcion"
+                  p Modalidad: 
+                else 
+                  p Modalidad: #{x.modalidad}
+                  
+
+
+        
+        
+
+   
+
+  
+  
+                            
+             
+
+       
+
+     
+
+
+  

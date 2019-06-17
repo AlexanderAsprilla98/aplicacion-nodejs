@@ -1,0 +1,50 @@
+extends ./layout.jade
+extends ./index.jade
+
+block curso
+  div(class="container")
+    h1 Crear un curso nuevo
+  div(class="container")
+    strong
+          p
+          p Los campos marcados con * son obligatorios     
+    
+
+block formulario
+  div(class="container")
+   form(action="/registrar" method="POST")
+     div(class="form-row")
+
+        div.form-group.col-md-3
+         label(for="id") Id*
+         input(type="text" name="id" placeholder="Escribe un numero para el curso" id="id" maxlength="20" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control")
+
+        div.form-group.col-md-3
+         label(for="nombre") Nombre*
+         input(type="text" id="nombre" name="nombre" placeholder="Nombre del curso" required class="form-control")
+       
+        div.form-group.col-md-3
+         label(for="modalidad") Modalidad
+         select(id="modalidad" name="modalidad"   class="form-control")
+
+           option Seleccione una opcion
+           option Presencial
+           option Virtual
+
+        div.form-group.col-md-2
+         label(for="valor") Valor*
+         input(type="text" id="valor" name="valor" placeholder="Valor" class="form-control")
+
+        div.form-row
+         div.form-group.col-md-6
+           label(for="mensaje") Descripcion*
+           textarea(type="text" id="mensaje" name="descripcion" placeholder="Ingrese descripcion" required class="form-control")
+       
+        div.form-group.col-md-2
+         label(for="intensidad") Intensidad horaria
+         input(type="text" id="intensidad" name="intensidad" placeholder="Intensidad" class="form-control")
+
+       div.form-group.col-md-8
+         input(type="submit" value="Crear" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-lg")
+         
+      
