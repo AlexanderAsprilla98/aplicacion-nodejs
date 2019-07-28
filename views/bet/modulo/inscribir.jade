@@ -1,0 +1,46 @@
+extends ../../layout.jade
+extends ../index.jade
+
+block tituloInscricion
+  div(class="container")
+     h1 Formulario para inscribirse a un curso
+    div(class="container")
+        strong
+          p
+          p Los campos marcados con * son obligatorios   
+
+block formularioInscricion
+ div(class="container")
+  form(action="/bet/modulo" method="POST")
+      div(class="form-row")
+         div(class="form-group col-md-6")
+             label(for="documento") Documento de identidad*
+             input(type="text" name="documento" class="form-control" id="inputEmail4" required    onkeypress='return event.charCode >= 48 && event.charCode <= 57'  maxlength="20" placeholder="Escribe tu documento de identificación")
+
+         div(class="form-group col-md-6")
+             label(for="correo") Correo Electronico*
+             input(type="email" name="correo" class="form-control" id="inputPassword4" placeholder="Correo")
+    
+      div(class="form-row")
+         div(class="form-group col-md-6")
+             label(for="nombre") Nombre*
+             input(type="text" name="nombre" class="form-control" required placeholder="Nombre" id="inputCity")
+   
+      div(class="form-group col-md-4")
+         label(for="telefono") Telefono:
+         input(type="text" name="telefono" class="form-control" placeholder="Telefono" id="inputZip")
+      
+      div(class="form-group col-md-3")
+         div(class="form-check")
+             label(for="Cursos") Cursos disponibles*
+                 each nombre in nombres 
+                     if nombre.estado == "Disponible"
+                         br
+                         input(class="form-check-input" name="curso" type="radio" id="exampleRadios1" value="#{nombre.nombre}")
+                         label(class="form-check-label" for="exampleRadios1") #{nombre.nombre}
+             
+   
+       div.form-group.col-md-8
+         input(type="submit" value="Inscribirme" class="btn btn-primary btn-lg") 
+
+    
