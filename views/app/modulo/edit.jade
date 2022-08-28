@@ -1,0 +1,58 @@
+extends ../../layout.jade
+extends ../home.jade
+
+block nota
+ div(class="container")
+   h1 Cursos disponible para Actualizar
+
+block upgrade
+ div(class="container")
+    form(action="/app/modulo/#{data._id}?_method=put" method="POST")
+      div(class="form-row")
+        div.form-group.col-md-3
+          label(for="id_curso") Id
+          input(type="text" name="id_curso" value="#{data.id_curso}" disabled id="id" class="form-control")
+
+        div.form-group.col-md-3
+          label(for="nombre") Nombre
+          input(type="text" id="nombre" name="nombre" value="#{data.nombre}" disabled class="form-control")
+          
+        div.form-group.col-md-2
+          label(for="modalidad") Modalidad
+          select(id="modalidad" name="modalidad" disabled class="form-control")
+          
+            if  data.modalidad == "Presencial"
+              option #{data.modalidad}
+              option Virtual
+            else  
+               option #{data.modalidad}
+               option Presencial
+              
+
+        div.form-group.col-md-2
+          label(for="valor") Valor
+          input(type="text" id="valor" name="valor" value="#{data.valor}" disabled class="form-control")
+
+        div.form-row
+          div.form-group.col-md-6
+            label(for="mensaje") Descripcion
+            textarea(type="text" id="mensaje" name="descripcion" disabled class="form-control") #{data.descripcion}
+          
+        div.form-group.col-md-2
+          label(for="intensidad") Intensidad horaria
+          input(type="text" id="intensidad" name="intensidad" value="#{data.intensidad}" disabled class="form-control")
+
+        div.form-group.col-md-2
+          label(for="estado") Estado
+          select(id="estado" name="estado" class="form-control")
+
+            if data.estado === "Disponible"
+                option #{data.estado}
+                option Cerrado
+            else 
+                option #{data.estado}
+                option Disponible
+
+        div.form-group.col-md-8
+          button(type="submit" value="Guardar" class="btn btn-primary btn-lg") Guardar
+        
