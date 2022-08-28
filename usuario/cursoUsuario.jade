@@ -1,0 +1,20 @@
+block collapse
+ div(class="container")
+   h1 Ver cursos como interesado
+   each x in cursos
+      if x.estado == "Disponible"
+        div(class="panel-group col-md-4" id="accordion" role="tablist")
+          div(class="panel panel-default")
+            div(class="panel-heading" role="tab" id="heading#{x.id}")
+              h4(class="panel-title")
+                  a(href="#collapse#{x.id}" data-toggle="collapse" data-parent="#accordion") 
+                    p Nombre del curso: #{x.nombre}
+                    p Valor: #{x.valor}
+
+            div(id="collapse#{x.id}" class="panel-collapse collapse")
+              div(class="panel-body") 
+                p Nombre: #{x.nombre}
+                p Valor: #{x.valor}
+                p Descripcion: #{x.descripcion}
+                p Modalidad: #{x.modalidad}
+                p Intensidad: #{x.intensidad}

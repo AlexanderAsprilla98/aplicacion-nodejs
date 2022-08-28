@@ -1,0 +1,28 @@
+extends ./layout.jade
+block contenido
+ div(class="container")
+   h1 Bienvenido a Node JS
+
+block menu_portal
+  div(class="container")
+    br
+    header
+      nav(class="navbar navbar-default navbar-inverse")
+        div.container-fluid
+          div.navbar-header
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1")
+              span(class="sr-only") Menu
+              span(class="icon-bar")
+              span(class="icon-bar")
+              span(class="icon-bar")
+            a(href="#" class="navbar-brand") NodeJS
+          div(class="collapse navbar-collapse" id="navbar-1")
+            ul(class="nav navbar-nav")
+              li(role="presentation")
+                a(href="/") Inicio
+              li(role="presentation")
+                a(href="/ver") Ver Curso
+            ul(class="nav navbar-nav navbar-right")
+              li(role="presentation")
+               a(href="/login") Iniciar Sesión
+                 

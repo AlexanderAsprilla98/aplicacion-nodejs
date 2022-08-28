@@ -1,0 +1,24 @@
+extends ./layout.jade
+
+block contenido
+ div(class="container")
+   center
+    a(href="/")
+     h1 Bienvenido al Login de Node JS
+
+block login
+  div(class="container")
+    br
+    form(action="/sessions" method="POST" class="login")
+      div(class="form-group")
+         label Correo
+         br
+         input(class="form-control" type="text" name="correo" placeholder="Escribe tu correo")
+      div(class="form-group")
+         label Contraseña
+         br
+         input(class="form-control" type="password" name="contrasena" placeholder="Escribe tu contraseña")
+         br
+         a(href="/registroUser") Registrarte
+
+      button(class="btn btn-primary btn-block") Iniciar

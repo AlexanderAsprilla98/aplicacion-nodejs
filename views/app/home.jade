@@ -1,0 +1,40 @@
+extends ../layout.jade
+include ../../app.js
+
+block contenido
+ div(class="container")
+   h1 Bienvenido #{usuario.usuario}  
+
+block menu
+  div(class="container")
+    br
+    header
+      nav(class="navbar navbar-default")
+        div.container-fluid
+          div.navbar-header
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1")
+              span(class="sr-only") Menu
+              span(class="icon-bar")
+              span(class="icon-bar")
+              span(class="icon-bar")
+            a(href="#" class="navbar-brand") NodeJS
+          div(class="collapse navbar-collapse" id="navbar-1")
+            ul(class="nav navbar-nav")
+              li(role="presentation")
+                a(href="/app") Inicio
+              li(role="presentation")
+                a(href="/app/modulo/registro") Crear Curso
+              li(role="presentation")
+                a(href="/app/modulo") Ver Cursos
+              li(role="presentation")
+                a(href="/app/modulo/inscritos") Ver Inscritos
+            ul(class="nav navbar-nav navbar-right")
+              li(class="dropdown")
+               a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button") 
+                 span(class="caret")
+                ul(class="dropdown-menu")
+                  li
+                   a(href="/salir") Cerrar
+    
+    
+
