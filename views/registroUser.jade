@@ -1,0 +1,38 @@
+extends ./layout.jade
+
+block contenido
+ div(class="container")
+   center
+    a(href="/")
+     h1 Bienvenido al formulario de registro de Node JS
+
+block formularioUser
+  div(class="container")
+    br
+    form(action="/usuario" method="POST" class="login")
+      div(class="form-group")
+         label Nombre
+         br
+         input(class="form-control" type="text" name="nombre" placeholder="Escribe tu nombre")
+      div(class="form-group")
+         label Apellido
+         br
+         input(class="form-control" type="text" name="apellido" placeholder="Escribe tu apellido")
+       div(class="form-group")
+         label Usuario
+         br
+         input(class="form-control" type="text" name="usuario" placeholder="Escribe tu usuario")   
+      div(class="form-group")
+         label Correo
+         br
+         input(class="form-control" type="text" name="correo" placeholder="Escribe tu correo")
+      div(class="form-group")
+         label Contraseña
+         br
+         input(class="form-control" type="password" name="contraseña" placeholder="Escribe tu contraseña")
+      div(class="form-group")
+         label Confirmar Contraseña
+         br
+         input(class="form-control" type="password" name="contraseña_confirmar" placeholder="Confirmación de contraseña")
+         
+      button(class="btn btn-primary btn-block") Registrar

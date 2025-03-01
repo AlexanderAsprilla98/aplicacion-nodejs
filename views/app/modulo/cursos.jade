@@ -1,0 +1,60 @@
+extends ../../layout.jade
+extends ../home.jade
+
+
+block ver
+ div(class="container")
+   h1 Cursos creados hasta la fecha
+
+block table
+  div(class="container")
+    div(class="table-responsive")
+      table(class="table")
+        thead
+          th Id
+          th Nombre
+          th Modalidad
+          th Valor
+          th Descripcion
+          th Intensidad
+          th Estado
+          th Modificar
+            tbody 
+              each curso in cursos
+                tr
+                  td
+                    p= curso.id_curso
+                  td
+                    p= curso.nombre
+                  td 
+                    p= curso.modalidad
+                  td
+                    p= curso.valor
+                  td
+                    p= curso.descripcion
+                  td
+                    p= curso.intensidad
+                  td
+                    p= curso.estado
+                  td
+                    a(type="submit" value="Crear" class="btn btn-primary" href="/app/modulo/#{curso._id}/edit") Actualizar
+
+
+
+
+        
+        
+
+   
+
+  
+  
+                            
+             
+
+       
+
+     
+
+
+  
